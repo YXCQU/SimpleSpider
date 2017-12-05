@@ -8,14 +8,17 @@ def get_ip():
     获得所有IP
     :return: 随机返回一个
     """
-    r = requests.get('http://192.168.1.195:8010/')
-    all_ip = json.loads(r.text)
-    # print("总IP数量：%d" % len(all_ip))
-    index = random.randint(0, len(all_ip) - 1)
-    # print("这是第 %d" % str(index) + "个IP")
-    ip = all_ip[index][0]
-    port = all_ip[index][1]
-    return ip, port
+    r = requests.get('http://111.230.144.236:5010/get/')
+    # index = random.randint(0, len(all_ip) - 1)
+    # ip = all_ip[index][0]
+    # port = all_ip[index][1]
+    return r.text
+
+
+def get_all_ip():
+    url = 'http://111.230.144.236:5010/get_all/'
+    r = requests.get(url)
+    return json.loads(r.text)
 
 
 def get_proxy():
@@ -25,10 +28,15 @@ def get_proxy():
     """
     ip = get_ip()
     proxies = {
-        'http': '%s:%s' % ip,
-        'https': '%s:%s' % ip
+        'https': 'https://%s' % ip,
+        'http': 'http://%s' % ip
     }
     return proxies
+
+
+def del_ip(ip):
+    r = requests.get("http://111.230.144.236:5010/delete/?proxy={}".format(ip))
+    return r.text
 
 
 def del_proxy(ip):
@@ -37,11 +45,10 @@ def del_proxy(ip):
     :param ip:
     :return:
     """
-    ip = ip.split(":")[0]
-    r = requests.get('http://192.168.1.195:8010/delete?ip=%s' % ip)
-    return r.text
+    return del_ip(ip)
 
 
 if __name__ == '__main__':
     """测试"""
+    print(get_proxy())
     pass

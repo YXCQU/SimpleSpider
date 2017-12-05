@@ -1,0 +1,6 @@
+{
+  "test.py::test_http": true,
+  "test.py::test_socks4": true,
+  "test.py::test_socks5": true,
+  "test.py::test_url": true
+}

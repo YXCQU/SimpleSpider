@@ -1,0 +1,45 @@
+[
+  {
+    "ip:port": "106.14.12.240:8082",
+    "http_type": "HTTP"
+  },
+  {
+    "ip:port": "54.179.166.238:8080",
+    "http_type": "HTTP"
+  },
+  {
+    "ip:port": "222.66.22.82:8090",
+    "http_type": "HTTP/HTTPS"
+  },
+  {
+    "ip:port": "62.14.178.72:53281",
+    "http_type": "HTTP"
+  },
+  {
+    "ip:port": "209.126.106.225:8772",
+    "http_type": "HTTP/HTTPS"
+  },
+  {
+    "ip:port": "180.210.201.54:3128",
+    "http_type": "HTTP"
+  },
+  {
+    "ip:port": "94.232.89.255:80",
+    "http_type": "HTTP/HTTPS"
+  },
+  {
+    "ip:port": "113.108.253.195:9797",
+    "http_type": "HTTP"
+  },
+  {
+    "ip:port": "218.244.46.6:8118",
+    "http_type": "HTTP"
+  },
+  {
+    "ip:port": "42.201.208.109:8080",
+    "http_type": "HTTPS"
+  }
+],
+[{"ip:port": "109.195.22.15:1080", "http_type": "Socks4"}, {"ip:port": "138.97.236.11:1080", "http_type": "Socks4"}, {"ip:port": "185.89.217.30:53060", "http_type": "HTTP"}, {"ip:port": "42.245.252.35:80", "http_type": "HTTP"}, {"ip:port": "185.144.67.169:8080", "http_type": "HTTP"}, {"ip:port": "119.163.121.122:8080", "http_type": "HTTP"}, {"ip:port": "222.186.52.136:90", "http_type": "HTTPS"}, {"ip:port": "209.150.253.91:80", "http_type": "HTTP/HTTPS"}, {"ip:port": "141.196.144.214:8080", "http_type": "HTTP"}, {"ip:port": "223.197.56.102:80", "http_type": "HTTP"}],
+[{"ip:port": "42.245.252.35:80", "http_type": "HTTP"}, {"ip:port": "223.19.41.6:8380", "http_type": "HTTP"}, {"ip:port": "103.218.240.120:8118", "http_type": "HTTP"}, {"ip:port": "185.89.216.88:20000", "http_type": "HTTP"}, {"ip:port": "183.179.198.93:3128", "http_type": "HTTP/HTTPS"}, {"ip:port": "52.44.16.168:3129", "http_type": "HTTP"}, {"ip:port": "116.85.24.26:8080", "http_type": "HTTP/HTTPS"}, {"ip:port": "104.200.33.168:3128", "http_type": "HTTP/HTTPS"}, {"ip:port": "177.114.62.121:8080", "http_type": "HTTP"}, {"ip:port": "5.222.37.1:8080", "http_type": "HTTP"}],
+[{"ip:port": "42.245.252.35:80", "http_type": "HTTP"}, {"ip:port": "81.88.198.162:53281", "http_type": "HTTP"}, {"ip:port": "165.90.243.26:54214", "http_type": "HTTPS"}, {"ip:port": "77.85.206.165:53281", "http_type": "HTTP/HTTPS"}, {"ip:port": "213.235.171.118:53281", "http_type": "HTTP/HTTPS"}, {"ip:port": "61.155.164.108:3128", "http_type": "HTTP/HTTPS"}, {"ip:port": "104.197.98.54:80", "http_type": "HTTP"}, {"ip:port": "182.253.32.136:3128", "http_type": "HTTP/HTTPS"}, {"ip:port": "174.32.125.46:87", "http_type": "HTTP"}, {"ip:port": "187.94.215.26:3128", "http_type": "HTTP/HTTPS"}], 

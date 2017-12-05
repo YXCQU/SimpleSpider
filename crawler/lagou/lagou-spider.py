@@ -74,13 +74,14 @@ def get_content(post_param):
                 #     ip_cool_down(proxy)
                 # elif result['clientIp'] in local_ip:
                 del_from_list(proxy)
+                print('删除当前代理')
                 proxy = get_from_list()
                 time.sleep(2)
                 continue
         except Exception as e:
             print(e)
             rb = del_from_list(proxy)
-            print("删除代理 %s" % rb)
+            print("出错删除当前代理 %s" % rb)
             proxy = get_from_list()
             continue
 
@@ -92,6 +93,7 @@ if __name__ == '__main__':
                        '产品总监', '产品经理', 'html5', '深度学习', '机器学习', '自然语言处理']
     for kd in position_params:
         while True:
+            print(kd + ' 第 %s' % i + ' 页')
             post_param = {"first": "false", "pn": i, "kd": kd}
             res = get_content(post_param)
             if len(res) == 0:

@@ -8,9 +8,6 @@ def mysql_insert(sql_data):
     city,industryField,positionAdvantage,salary,companySize,score,companyFullName, financeStage) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
     try:
         for item in sql_data:
-            for i in item:
-                if not i:
-                    i = ""
             cursor.execute(insert_sql, item)
             conn.commit()
     except Exception as e:

@@ -2,7 +2,7 @@ import requests
 import random
 import json
 
-
+# 免费代理（停止使用）
 def get_ip():
     """
     获得所有IP

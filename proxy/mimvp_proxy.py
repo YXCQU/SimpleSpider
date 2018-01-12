@@ -1,10 +1,15 @@
 import requests
 import json
 import time
+from config import get_header
+from bs4 import BeautifulSoup
 
-url = 'https://proxy.mimvp.com/api/fetch.php?orderid=860171205093855810&num=100&result_fields=1,2&result_format=json'
+url = ''  # 你的付费连接
+free_url = "https://proxy.mimvp.com/free.php"  # free url
+free_params = ['in_hp', 'in_socks', 'out_socks']
 
 
+# 付费米扑代理
 def get_mimvp():
     """
     从接口获得代理IP
@@ -35,6 +40,7 @@ def get_mimvp():
     return tmp
 
 
+# 付费版
 def get_proxy():
     """
     获得代理list
@@ -80,6 +86,32 @@ def get_proxy():
     return proxy_list
 
 
+# 免费代理
+def get_free():
+    r_http = requests.get(free_url, params={'proxy': free_params[0]}, headers=get_header())
+    # r_socks1 = requests.get(free_url, params={'proxy': free_params[1]}, headers=get_header())
+    # r_socks2 = requests.get(free_url, params={'proxy': free_params[2]}, headers=get_header())
+    parse_free(r_http.text)
+
+def parse_free(html):
+    soup = BeautifulSoup(html, 'lxml')
+    r = soup.select('tbody')[0]
+    ips = r.select('.tbl-proxy-ip')
+    ports = r.select('.tbl-proxy-port img')
+    types = r.select('.tbl-proxy-type')
+    for i in range(len(ips)):
+        ip = ips[i].get_text()
+        port = ports[i].attrs['src']
+        ip_type = types[i].get_text()
+
+    print(r)
+    pass
+
+
+
+
+
 if __name__ == '__main__':
-    res = get_proxy()
-    print(res)
+    # res = get_proxy()
+    # print(res)
+    get_free()

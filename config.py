@@ -3,6 +3,13 @@
 import random
 import UserAgents
 
+# 通用headers
+tyc_headers = {
+    "User-Agent": random.choice(UserAgents.USER_AGENTS),
+    "DNT": "1",
+    "Host": "www.tianyancha.com",
+    "Referer": "https://www.tianyancha.com/search?key=",
+}
 # 拉勾网headers
 lagou_headers = {
     "User-Agent": random.choice(UserAgents.USER_AGENTS),
@@ -40,6 +47,7 @@ toutiao_headers = {
     'DNT': '1',
     'Connection': 'keep-alive',
 }
+
 
 # 通用请求头
 def get_header():

@@ -51,4 +51,4 @@ def del_proxy(ip):
 if __name__ == '__main__':
     """测试"""
     print(get_proxy())
-    pass
+    # pass

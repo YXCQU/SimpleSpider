@@ -4,7 +4,7 @@ import time
 from config import get_header
 from bs4 import BeautifulSoup
 
-url = ''  # 你的付费连接
+url = 'https://proxyapi.mimvp.com/api/fetchopen.php?orderid=863182248302101423&num=100&country=%E4%B8%AD%E5%9B%BD&ping_time=1&result_fields=1,2,10,3,4,5,6,7,8,9&result_format=json'  # 你的付费连接
 free_url = "https://proxy.mimvp.com/free.php"  # free url
 free_params = ['in_hp', 'in_socks', 'out_socks']
 
@@ -106,9 +106,6 @@ def parse_free(html):
 
     print(r)
     pass
-
-
-
 
 
 if __name__ == '__main__':

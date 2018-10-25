@@ -5,10 +5,11 @@ import UserAgents
 
 # 通用headers
 tyc_headers = {
-    "User-Agent": random.choice(UserAgents.USER_AGENTS),
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36",
     "DNT": "1",
     "Host": "www.tianyancha.com",
     "Referer": "https://www.tianyancha.com/search?key=",
+    "Cookie": "aliyungf_tc=AQAAAOhregsZmQ4AYD2ktGTq0XGoFoGQ; csrfToken=24us384OjrbLoMvkC1A5Ur4u; TYCID=0893e3b0d77711e8a3d2b56d1f28ed41; undefined=0893e3b0d77711e8a3d2b56d1f28ed41; ssuid=4879515534; _ga=GA1.2.785143276.1540376725; _gid=GA1.2.323982156.1540376725; Hm_lvt_e92c8d65d92d534b0fc290df538b4758=1540376724,1540378368,1540388766,1540388797; token=bf22bd9f62024b9e8a95a0e1c690e562; _utm=863b9180383c49d5b2d2ee6484ac9d51; tyc-user-info=%257B%2522myQuestionCount%2522%253A%25220%2522%252C%2522integrity%2522%253A%25220%2525%2522%252C%2522state%2522%253A0%252C%2522vipManager%2522%253A%25220%2522%252C%2522onum%2522%253A%25220%2522%252C%2522monitorUnreadCount%2522%253A%25220%2522%252C%2522discussCommendCount%2522%253A%25220%2522%252C%2522token%2522%253A%2522eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODg3NTI5OTU5NyIsImlhdCI6MTU0MDM5MTQ0OSwiZXhwIjoxNTU1OTQzNDQ5fQ.arHGF04_F-fZNyaPGoOPmfddSD73_KKbPEbCOIr1hYFus0PjhPACgiY8e7kxIsksn5g4coGV0bKC3VJlILu7ZA%2522%252C%2522redPoint%2522%253A%25220%2522%252C%2522pleaseAnswerCount%2522%253A%25220%2522%252C%2522vnum%2522%253A%25220%2522%252C%2522bizCardUnread%2522%253A%25220%2522%252C%2522mobile%2522%253A%252218875299597%2522%257D; auth_token=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODg3NTI5OTU5NyIsImlhdCI6MTU0MDM5MTQ0OSwiZXhwIjoxNTU1OTQzNDQ5fQ.arHGF04_F-fZNyaPGoOPmfddSD73_KKbPEbCOIr1hYFus0PjhPACgiY8e7kxIsksn5g4coGV0bKC3VJlILu7ZA; _gat_gtag_UA_123487620_1=1; Hm_lpvt_e92c8d65d92d534b0fc290df538b4758=1540391895"
 }
 # 拉勾网headers
 lagou_headers = {

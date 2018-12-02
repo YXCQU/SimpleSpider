@@ -31,7 +31,6 @@ weibo_headers = {
     'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
     'Accept-Encoding': 'gzip, deflate, br',
     'Referer': 'https://m.weibo.cn/status/',
-    # 'Cookie': 'SUB=_2A253O13yDeRhGeNK61AY8CzJwzyIHXVUxGO6rDV6PUNbktANLXP2kW1NSW85ShwUa0Be7OiaGwPQzEGsYs03NJMr',
     'DNT': '1',
     'Connection': 'keep-alive',
 }
@@ -44,7 +43,6 @@ toutiao_headers = {
     'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
     'Accept-Encoding': 'gzip, deflate, br',
     'Referer': 'https://www.toutiao.com/ch/news_hot/',
-    # 'Cookie': '__tasessionId=4do2m93l01515224454646; tt_webid=6507839417855657486; uuid="w:da936644313f4a9385784dea4eac2f0b"; UM_distinctid=160ca6a571e669-0a088d7ef4d7dd-61131b7e-1fa400-160ca6a571f84c; CNZZDATA1259612802=2023777230-1515221049-%7C1515221049',
     'DNT': '1',
     'Connection': 'keep-alive',
 }

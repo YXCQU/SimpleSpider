@@ -1,3 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea/workspace.xml
 /.idea/
+/.idea/misc.xml
+/.idea/SimpleSpider.iml
+__pycache__/
+proxy/__pycache__/

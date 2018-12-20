@@ -5,6 +5,12 @@ from proxy.mimvp_proxy import get_proxy
 
 
 def get_money(key, proxy=None):
+    """
+    获取公司的注册资金
+    :param key:
+    :param proxy:
+    :return:
+    """
     url = f'http://m.tianyancha.com/search?key={key}'
     try_num = 1
     while try_num > 0:
@@ -23,5 +29,5 @@ def get_money(key, proxy=None):
 
 
 if __name__ == '__main__':
-    for proxy in get_proxy():
-        get_money('editorai', proxy)
+    for p in get_proxy():
+        get_money('editorai', p)

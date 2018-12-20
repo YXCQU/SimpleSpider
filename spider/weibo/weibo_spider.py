@@ -1,7 +1,6 @@
-import requests
 import config
 import json
-from spider.HtmlDownloader import download
+from Downloader.HtmlDownloader import download
 
 
 class Weibopider(object):

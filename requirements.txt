@@ -1,8 +1,8 @@
-beautifulsoup4==4.6.3
-certifi==2018.11.29
-chardet==3.0.4
-idna==2.7
-lxml==4.2.5
-PySocks==1.6.8
-requests==2.20.1
-urllib3==1.24.1
+beautifulsoup4
+certifi
+chardet
+idna
+lxml
+PySocks
+requests
+urllib3

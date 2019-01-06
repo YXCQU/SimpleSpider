@@ -1,7 +1,7 @@
 # coding:utf-8
 
 import random
-import UserAgents
+from Downloader import UserAgents
 
 # 通用headers
 tyc_headers = {

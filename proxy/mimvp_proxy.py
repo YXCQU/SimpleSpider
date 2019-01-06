@@ -1,12 +1,11 @@
 import requests
-from config import get_header
 from bs4 import BeautifulSoup
 
 # 订单号可以免费注册获得
-order_id = '862000891125217287'
-# url_https = f'https://proxyapi.mimvp.com/api/fetchopen.php?orderid={order_id}&num=20&anonymous=3,5&ping_time=5&transfer_time=10&check_success_count=100&result_fields=1,2,5,6,7,8&result_format=json'
-# url_https = f'https://proxyapi.mimvp.com/api/fetchsecret.php?orderid={order_id}&num=5&result_fields=1,2,3&result_format=json'
-url_https = f'https://proxyapi.mimvp.com/api/fetchopen.php?orderid={order_id}&num=20&result_fields=1,2&result_format=json&ping_time=5&transfer_time=10'
+order_id = '868000660225108496'  # 864000460225100593
+url_https = f'https://proxyapi.mimvp.com/api/fetchopen.php?orderid={order_id}&num=200&anonymous=3,5&ping_time=5&transfer_time=10&check_success_count=100&result_fields=1,2,5,6,7,8&result_format=json'
+# url_https = f'https://proxyapi.mimvp.com/api/fetchsecret.php?orderid={order_id}&num=20&result_fields=1,2,3&result_format=json'
+# url_https = f'https://proxyapi.mimvp.com/api/fetchopen.php?orderid={order_id}&num=20&result_fields=1,2&result_format=json&ping_time=5&transfer_time=10'
 
 
 # 付费米扑代理

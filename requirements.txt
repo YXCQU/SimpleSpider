@@ -1,3 +1,7 @@
+apscheduler
+aiomultiprocess
+aiohttp
+peewee
 beautifulsoup4
 certifi
 chardet

@@ -1,7 +1,7 @@
 import requests
 from config import *
 from lxml import etree
-from proxy.mimvp_proxy import get_proxy
+from proxy.mimvp_proxy import get_requests_proxy
 
 
 def get_money(key, proxy=None):
@@ -29,5 +29,5 @@ def get_money(key, proxy=None):
 
 
 if __name__ == '__main__':
-    for p in get_proxy():
+    for p in get_requests_proxy():
         get_money('editorai', p)

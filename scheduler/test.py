@@ -3,7 +3,9 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.schedulers.background import BackgroundScheduler
 import time
 
-# 实例化一个调度器
+# 实例化一个调度器 后台任务
+# BlockingScheduler 阻塞式任务
+# AsyncIOScheduler aio库任务
 scheduler = BackgroundScheduler()
 
 

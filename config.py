@@ -1,9 +1,13 @@
 # coding:utf-8
 
 import random
-from Downloader import UserAgents
+from download import UserAgents
 
-# 通用headers
+######################
+# 通用配置文件 config #
+######################
+
+# 天眼查headers
 tyc_headers = {
     "User-Agent": "Mozilla/5.0 (Linux; Android 5.1.1; Nexus 6 Build/LYZ28E) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Mobile Safari/537.36",
     "Host": "m.tianyancha.com",
@@ -85,3 +89,10 @@ MONGO_TABLE_TAOBAO = 'toutiao'
 GROUP_START = 1
 GROUP_END = 20
 KEYWORD = '街拍'
+
+# 网站配置信息
+# 米扑代理 免费试用5小时
+order_id = '860020601124102394'
+mp_url = f'https://proxyapi.mimvp.com/api/fetchopen.php?orderid={order_id}&num=20&http_type=2,4,5&anonymous=3,' \
+    f'5&ping_time=5&transfer_time=10&check_success_count=10&filter_hour=12&result_fields=1,2,10,4,5,6,7,8,' \
+    f'9&result_format=json'

@@ -1,26 +1,17 @@
 import requests
-from bs4 import BeautifulSoup
-
-# 订单号可以免费注册获得
-order_id = '866030702906124109'  # 864000460225100593
-url_https = f'https://proxyapi.mimvp.com/api/fetchopen.php?orderid={order_id}&num=200&anonymous=3,5&ping_time=5&transfer_time=10&check_success_count=100&result_fields=1,2,5,6,7,8&result_format=json'
-
-
-# url_https = f'https://proxyapi.mimvp.com/api/fetchsecret.php?orderid={order_id}&num=20&result_fields=1,2,3&result_format=json'
-# url_https = f'https://proxyapi.mimvp.com/api/fetchopen.php?orderid={order_id}&num=20&result_fields=1,2&result_format=json&ping_time=5&transfer_time=10'
 
 
 def get_mp(url, types='json'):
     """
     获取米扑原始IP数据
     :param url:
-    :param types:
+    :param types: 返回数据类型，默认json格式
     :return:
     """
     try:
         r = requests.get(url, timeout=8)
-    except TimeoutError:
-        print("代理服务器超时")
+    except Exception as e:
+        print(e)
         return
     if types == 'text':
         return r.text
@@ -30,7 +21,7 @@ def get_mp(url, types='json'):
 # 付费米扑代理
 def get_mp_http(_url=None):
     """
-    初步处理 IP
+    对ip进行处理
     :return:
     """
 
@@ -50,7 +41,7 @@ def get_mp_http(_url=None):
 
 def requests_proxy(func=None, url=None):
     """
-    格式化 ip 为 requests proxy格式
+    进一步格式化 ip，转为 requests proxies 格式
     :param func:
     :param url:
     :return:
@@ -78,6 +69,11 @@ def get_requests_proxy():
 
 
 if __name__ == '__main__':
-    # 打印显示
-    for proxy in requests_proxy(get_mp_http, url_https):
-        print(proxy)
+    # 测试方法
+    # 订单号可以免费注册获得
+    order_id = '864030902901263100'  # 网站注册 免费获得
+    url_https = f'https://proxyapi.mimvp.com/api/fetchopen.php?orderid={order_id}&num=200&anonymous=3,5&ping_time=5&' \
+        f'transfer_time=10&check_success_count=100&result_fields=1,2,5,6,7,8&result_format=json'
+
+    s = get_mp(url=url_https, types='json')
+    print(s)

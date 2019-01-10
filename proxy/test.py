@@ -14,13 +14,13 @@ async def get(url):
 
 
 async def request():
-    url = 'http://111.231.227.238:8000'
+    url = 'https://m.tianyancha.com'
     print('Waiting for', url)
     result = await get(url)
     # print('Get response from', url, 'Result:', result)
 
 
-tasks = [asyncio.ensure_future(request()) for _ in range(500)]
+tasks = [asyncio.ensure_future(request()) for _ in range(1)]
 loop = asyncio.get_event_loop()
 loop.run_until_complete(asyncio.wait(tasks))
 

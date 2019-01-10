@@ -1,6 +1,6 @@
 import config
 import json
-from Downloader.HtmlDownloader import download
+from download.HtmlDownloader import download
 
 
 class Weibopider(object):

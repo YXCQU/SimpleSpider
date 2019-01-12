@@ -23,7 +23,7 @@ def job():
             data = json.loads(data)
             IPInfo.insert_many(data['result']).on_conflict_ignore().execute()
         finally:
-            print('定时任务获取IP')
+            print('定时获取IP')
 
 
 # 定时运行 间隔15s

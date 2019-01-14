@@ -1,7 +1,7 @@
 import requests
 
 
-def get_mp(url, types='json'):
+def get_mp_ip(url, types='json'):
     """
     获取米扑原始IP数据
     :param url:
@@ -18,14 +18,18 @@ def get_mp(url, types='json'):
     return r.json()
 
 
-# 付费米扑代理
+def get_order_id():
+    # TODO 获取米扑的order id
+    return ''
+
+
 def get_mp_http(_url=None):
     """
     对ip进行处理
     :return:
     """
 
-    res = get_mp(_url)
+    res = get_mp_ip(_url)
     all_ip = res['result']
 
     for _ip in all_ip:
@@ -75,5 +79,5 @@ if __name__ == '__main__':
     url_https = f'https://proxyapi.mimvp.com/api/fetchopen.php?orderid={order_id}&num=200&anonymous=3,5&ping_time=5&' \
         f'transfer_time=10&check_success_count=100&result_fields=1,2,5,6,7,8&result_format=json'
 
-    s = get_mp(url=url_https, types='json')
+    s = get_mp_ip(url=url_https, types='json')
     print(s)

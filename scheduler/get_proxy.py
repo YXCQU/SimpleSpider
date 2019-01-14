@@ -1,5 +1,5 @@
 from db.model import IPInfo
-from proxy.mimvp_proxy import get_mp
+from proxy.mimvp_proxy import get_mp_ip
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.schedulers.blocking import BlockingScheduler
 from config import mp_url
@@ -15,7 +15,7 @@ def job():
     获取代理ip，并保存到数据库
     :return:
     """
-    data = get_mp(url=mp_url, types='text')
+    data = get_mp_ip(url=mp_url, types='text')
     # 简单处理下数据格式
     if data:
         try:

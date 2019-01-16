@@ -1,10 +1,15 @@
+from io import BytesIO
+
 from qqai.vision.ocr import GeneralOCR
 
 
-def get_capture(url=None):
-    url = 'https://proxy.mimvp.com/common/ygrcode.php'
+# 验证码识别
+
+def get_capture(content):
     robot = GeneralOCR(2111250258, '9fbpc02zxLdKjOIy')
-    result = robot.run(url)
+    # base64 转为 文件格式
+    file_like = BytesIO(content)
+    result = robot.run(file_like)
     code = ''
     confidence = 0
     length = 0
@@ -14,7 +19,5 @@ def get_capture(url=None):
             code += i['character']
             confidence += i['confidence']
             length += 1
-    return {"ret": 0, "msg": "ok", "code": code, "confidence": round(confidence/length, 6)}
+    return {"ret": 0, "msg": "ok", "code": code, "confidence": round(confidence / length, 6)}
 
-
-print(get_capture())

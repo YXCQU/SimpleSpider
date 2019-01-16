@@ -3,7 +3,6 @@ from proxy.mimvp_proxy import get_mp_ip
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.schedulers.blocking import BlockingScheduler
 from config import mp_url
-import time
 import json
 
 # 实例化调度器

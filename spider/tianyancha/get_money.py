@@ -1,7 +1,7 @@
 import requests
 from config import *
 from lxml import etree
-from proxy.mimvp_proxy import get_requests_proxy
+from proxy.mp import get_requests_proxy
 
 
 def get_money(key, proxy=None):

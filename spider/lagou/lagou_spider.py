@@ -3,13 +3,13 @@ import json
 import time
 from config import *
 import random
-from proxy import mimvp_proxy
+from proxy import mp
 from lxml import etree
 
 ajax_url = 'https://www.lagou.com/jobs/positionAjax.json'
 wait_time = 2
 proxies_list = []
-proxies_list = mimvp_proxy.get_requests_proxy()
+proxies_list = mp.get_requests_proxy()
 
 
 # local_ip = requests.get("http://ip.chinaz.com/getip.aspx", timeout=10).text
@@ -20,7 +20,7 @@ def get_from_list():
     if proxies_list.__len__() > 10:
         return proxies_list[0]
     else:
-        proxies_list = mimvp_proxy.get_requests_proxy()
+        proxies_list = mp.get_requests_proxy()
     return None
 
 

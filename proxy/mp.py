@@ -1,8 +1,6 @@
 import requests
 import time
-from config import mp_headers, mp_url, code_url, reg_url, user_info
-from io import BytesIO
-from qqai.vision.ocr import GeneralOCR
+from config import mp_headers, code_url, reg_url, user_info
 from util import ocr
 import re
 
@@ -25,7 +23,7 @@ def get_mp_ip(url, types='json'):
 
 
 def get_order_id():
-    # 获取米扑的order id
+    # 获取米扑代理的order id
     data = {
         "user_email": str(int(time.time())) + '@qq.com',
         "user_pwd": 'password.',
@@ -45,9 +43,10 @@ def get_order_id():
         session.cookies.update(response.cookies)
         response = session.get(url=user_info)
         order_id = re.search("orderid=(\d+)", response.text).group(1)
-        print(order_id)
+        return order_id
     except Exception as e:
         print(e)
+        return 0
 
 
 def get_mp_http(_url=None):
@@ -95,18 +94,14 @@ def requests_proxy(func=None, url=None):
         yield requests_template
 
 
-def get_requests_proxy():
-    return requests_proxy(get_mp_http, url_https)
-
-
-if __name__ == '__main__':
-    # 测试方法
-    # 订单号可以免费注册获得
-    order_id = '864030902901263100'  # 网站注册 免费获得
-    url_https = f'https://proxyapi.mimvp.com/api/fetchopen.php?orderid={order_id}&num=200&anonymous=3,5&ping_time=5&' \
-        f'transfer_time=10&check_success_count=100&result_fields=1,2,5,6,7,8&result_format=json'
-    #
-    # s = get_mp_ip(url=url_https, types='json')
-    # print(s)
-    cookie = get_order_id()
-    print(cookie)
+# if __name__ == '__main__':
+#     # 测试方法
+#     # 订单号可以免费注册获得
+#     order_id = '864030902901263100'  # 网站注册 免费获得
+#     url_https = f'https://proxyapi.mimvp.com/api/fetchopen.php?orderid={order_id}&num=200&anonymous=3,5&ping_time=5&' \
+#         f'transfer_time=10&check_success_count=100&result_fields=1,2,5,6,7,8&result_format=json'
+#     #
+#     # s = get_mp_ip(url=url_https, types='json')
+#     # print(s)
+#     cookie = get_order_id()
+#     print(cookie)

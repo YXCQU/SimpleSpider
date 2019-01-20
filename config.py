@@ -103,9 +103,8 @@ KEYWORD = '街拍'
 # 代理网站配置信息
 # 米扑代理 免费试用5小时
 # 订单号、IP获取API
-order_id = '860030112988181100'
 mp_url = 'https://proxyapi.mimvp.com/api/fetchopen.php?orderid={}&num=20&http_type=2,4,5&anonymous=3,' \
-         '5&ping_time=5&transfer_time=10&check_success_count=10&filter_hour=12&result_fields=1,2,10,4,5,6,7,8,' \
+         '5&ping_time=5&transfer_time=10&check_success_count=100&filter_hour=1&result_fields=1,2,10,4,5,6,7,8,' \
          '9&result_format=json'
 # 注册、验证码、用户订单信息 API
 reg_url = 'https://proxy.mimvp.com/lib/user_regist_check.php'

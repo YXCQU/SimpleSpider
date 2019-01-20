@@ -1,7 +1,6 @@
 import requests
 from config import *
 from lxml import etree
-from proxy.mp import get_requests_proxy
 
 
 def get_money(key, proxy=None):
@@ -15,7 +14,6 @@ def get_money(key, proxy=None):
     try_num = 1
     while try_num > 0:
         try:
-            print(proxy)
             r = requests.get(url, headers=tyc_headers, timeout=10, proxies=proxy)
             html = etree.HTML(r.text)
             # print(r.text)
@@ -29,5 +27,3 @@ def get_money(key, proxy=None):
 
 
 if __name__ == '__main__':
-    for p in get_requests_proxy():
-        get_money('editorai', p)

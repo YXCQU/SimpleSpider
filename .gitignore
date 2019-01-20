@@ -4,5 +4,5 @@
 /.idea/misc.xml
 /.idea/SimpleSpider.iml
 __pycache__/
-proxy/__pycache__/
+proxy_pool/__pycache__/
 /util/ygrcode.png

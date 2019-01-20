@@ -3,7 +3,7 @@ import json
 import time
 from config import *
 import random
-from proxy import mp
+from proxy_pool import mp
 from lxml import etree
 
 ajax_url = 'https://www.lagou.com/jobs/positionAjax.json'
@@ -72,9 +72,9 @@ def get_content(post_param):
                 return result["content"]["positionResult"]["result"]
             else:
                 print(result)
-                # now_ip = requests.get("http://ip.chinaz.com/getip.aspx", proxies=proxy, timeout=10).text
+                # now_ip = requests.get("http://ip.chinaz.com/getip.aspx", proxies=proxy_pool, timeout=10).text
                 # if result['clientIp'] in now_ip:
-                #     ip_cool_down(proxy)
+                #     ip_cool_down(proxy_pool)
                 # elif result['clientIp'] in local_ip:
                 del_from_list(proxy)
                 print('删除当前代理')
@@ -122,7 +122,7 @@ if __name__ == '__main__':
     #             i = 1
     #             break
     #         i += 1
-    # print(proxy)
+    # print(proxy_pool)
     file_name = 'excel1.txt'
     with open(file_name, 'r') as f:
         for line in f.readlines():

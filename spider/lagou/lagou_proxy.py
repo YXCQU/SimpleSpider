@@ -1,4 +1,3 @@
-from proxy import ip_proxy
 import requests
 import multiprocessing
 import time
@@ -11,7 +10,7 @@ def del_ip(ip):
 
 def check_Proxy():
     time.sleep(1)
-    all_ip = ip_proxy.get_all_ip()
+    all_ip = ''
     for ip in all_ip:
         proxies = {
             "http": "%s" % ip,

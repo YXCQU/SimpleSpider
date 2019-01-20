@@ -1,8 +1,7 @@
 import time
 
 from db.model import IPInfo, OrderID
-from proxy import mp
-from proxy.mp import get_mp_ip
+from proxy_pool.mp import get_mp_ip, get_order_id
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.schedulers.blocking import BlockingScheduler
 from config import mp_url
@@ -15,11 +14,12 @@ import json
 
 def job_get_order_id():
     """
-    定时获得 订单id
+    定时获得并保存订单id
     :return:
     """
-    order_id = mp.get_order_id()
+    order_id = get_order_id()
     OrderID.insert(order_id=order_id, time=int(time.time())).on_conflict_ignore().execute()
+    print("定时获取订单号")
 
 
 def job_get_proxy():
@@ -47,10 +47,10 @@ def job_get_proxy():
 scheduler_get_proxy = BlockingScheduler()
 scheduler_get_id = BackgroundScheduler()
 
-# 定时运行 间隔15s
-# 'cron', seconds='*/15'
+# 定时运行
+# 'cron', seconds='*/15'  hours=5,
 scheduler_get_proxy.add_job(job_get_proxy, 'interval', seconds=15)
-scheduler_get_id.add_job(job_get_order_id, 'interval', hours=5, seconds=5)
+scheduler_get_id.add_job(job_get_order_id, 'interval', seconds=1, hours=5)
 
 # 开始运行调度器
 scheduler_get_id.start()

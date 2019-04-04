@@ -33,8 +33,8 @@ class OrderID(BaseModel):
 # if __name__ == '__main__':
 #     # # db.is_closed()
 #     db.connect()
-#     db.create_tables([OrderID])
-#     # data = """[{
+#     db.create_tables([IPInfo, OrderID])
+    # data = """[{
 #     #     {
 #     #         "check_total_count": 1028,
 #     #         "check_success_ratio": 0.9931906614785992,

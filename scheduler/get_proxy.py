@@ -14,7 +14,7 @@ import json
 
 def job_get_order_id():
     """
-    定时获得并保存订单id
+    定时获得并保存订单id, 保存到数据库
     :return:
     """
     order_id = get_order_id()
@@ -24,7 +24,7 @@ def job_get_order_id():
 
 def job_get_proxy():
     """
-    定时获取代理ip，并保存到数据库
+    定时获取代理ip, 并保存到数据库
     :return:
     """
     # 订单号初始化

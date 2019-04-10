@@ -26,8 +26,8 @@ def get_order_id():
     # 获取米扑代理的order id
     data = {
         "user_email": str(int(time.time())) + '@qq.com',
-        "user_pwd": 'password.',
-        "user_mobile": '13688889999',
+        "user_pwd": 'Pass.Word',
+        "user_mobile": '13665499594',
         "forurl": 'login.php',
         "user_rcode": 0
     }
@@ -42,7 +42,7 @@ def get_order_id():
         response = session.post(url=reg_url, headers=mp_headers, data=data)
         session.cookies.update(response.cookies)
         response = session.get(url=user_info)
-        order_id = re.search("orderid=(\d+)", response.text).group(1)
+        order_id = re.search(r"orderid=(\d+)", response.text).group(1)
         return order_id
     except Exception as e:
         print(e)

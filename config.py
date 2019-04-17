@@ -71,8 +71,8 @@ def get_header():
     }
 
 
-# 每次请求的最大超时时间
-TIME_OUT = 8
+# 每次请求的最长超时时间
+TIME_OUT = 15
 
 # 请求重试次数
 RETRY_TIME = 3

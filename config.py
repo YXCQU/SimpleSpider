@@ -108,5 +108,5 @@ mp_url = 'https://proxyapi.mimvp.com/api/fetchopen.php?orderid={}&num=20&http_ty
          '9&result_format=json'
 # 注册、验证码、用户订单信息 API
 reg_url = 'https://proxy.mimvp.com/lib/user_regist_check.php'
-code_url = 'https://proxy.mimvp.com/common/ygrcode.php?rand=0.09437166077013948'
+code_url = 'https://proxy.mimvp.com/common/ygrcode.php?rand=12345'
 user_info = 'https://proxy.mimvp.com/usercenter/userinfo.php'

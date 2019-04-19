@@ -43,6 +43,7 @@ def get_order_id():
     count = 0
     for _ip in all_ip:
         try:
+            print("测试次数: " + str(count))
             # 获取验证码
             session = requests.Session()
             req = session.get(url=code_url, headers=mp_headers)
@@ -55,9 +56,13 @@ def get_order_id():
             proxy = {"https": f"http://{ip}", "http": f"http://{ip}"}
             if 'socks4' in ip_type:
                 proxy = {"https": f"socks4://{ip}", "http": f"socks4://{ip}"}
+            # 使用获得的代理尝试次数
+            if count >= 7:
+                proxy = None
+                count = 0
             # 使用代理注册账号
+            print(proxy)
             response = session.post(url=reg_url, headers=mp_headers, timeout=TIME_OUT, data=data, proxies=proxy)
-
             session.cookies.update(response.cookies)
             response = session.get(url=user_info)
             order_id = re.search(r"orderid=(\d+)", response.text).group(1)
@@ -65,6 +70,7 @@ def get_order_id():
                 return order_id
         except:
             print('注册失败,重新注册中')
+            count += 1
             continue
 
 

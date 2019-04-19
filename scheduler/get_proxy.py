@@ -34,7 +34,7 @@ def job_get_proxy():
         job_get_order_id()
         return
     now_time = int(time.time())  # 当前 Unix时间戳（秒）
-    interval = 3600 * 2 + 60 * 15  # 定时注册账号，获取订单号（秒）
+    interval = 3600 * 2 + 60 * 20  # 定时注册账号，获取订单号（秒）
     if order_id[0].time + interval < now_time:
         job_get_order_id()
         return
@@ -45,23 +45,24 @@ def job_get_proxy():
         try:
             data = data.replace("ip:port", "ip_port")
             data = json.loads(data)
+            # print('定时获取IP')
             print(data)
             #  插入重复IP数据时 更新数据
             IPInfo.insert_many(data['result']).on_conflict_replace().execute()
-        finally:
-            print('定时获取IP')
+        except Exception as e:
+            print(e)
 
 
 # 实例化调度器
 scheduler_get_proxy = BlockingScheduler()
-scheduler_get_id = BackgroundScheduler()
+# scheduler_get_id = BackgroundScheduler()
 
 # 定时运行
-# 每20秒获取IP
+# 每35秒获取IP
 # 'cron', seconds='*/15'  hours=5,
-scheduler_get_proxy.add_job(job_get_proxy, 'interval', seconds=35)
+scheduler_get_proxy.add_job(job_get_proxy, 'interval', seconds=25)
 # scheduler_get_id.add_job(job_get_order_id, 'interval', seconds=1, hours=2)
 
 # 开始运行调度器
-scheduler_get_id.start()
+# scheduler_get_id.start()
 scheduler_get_proxy.start()
